@@ -10,11 +10,44 @@ import {
 } from 'antd'
 import colors from 'utils/colors'
 import openNotificationWithIcon from 'utils/openNotificationWithIcon'
+import Output from 'container/Output'
 
 const { Dragger } = Upload;
 
+const text = {
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "event_type",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "id",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "name",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "founded_year",
+    "type" : [ "long", "null" ]
+  }, {
+    "name" : "created_at",
+    "type" : [ {
+      "type" : "long",
+      "logicalType" : "timestamp-micros"
+    }, "null" ]
+  }, {
+    "name" : "updated_at",
+    "type" : [ {
+      "type" : "long",
+      "logicalType" : "timestamp-micros"
+    }, "null" ]
+  } ]
+}
+
+
 function UploadCard() {
   const [files, setFiles] = useState([])
+  const output = Output.useContainer()
 
   const replaceFile = (f) => {
     if (!_.isEmpty(files)) {
@@ -29,6 +62,8 @@ function UploadCard() {
   }
 
   const compile = () => {
+    const result = JSON.stringify(text, null, 2)
+    output.generateText(result)
     openNotificationWithIcon('success', 'Success!', 'Successfully compiled')
   }
 

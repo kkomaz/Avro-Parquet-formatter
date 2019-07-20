@@ -1,22 +1,26 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import { jsx } from '@emotion/core'
 import {
   Col,
   Row,
 } from 'antd'
 import UploadCard from 'components/Upload/UploadCard'
+import Markdown from 'components/Output/Markdown'
+import Output from 'container/Output'
 
 function App() {
   return (
     <div className="App">
+      <Output.Provider>
       <Row>
         <Col span={11} offset={1}>
           <UploadCard />
         </Col>
         <Col span={11} offset={1}>
-          Output
+          <Markdown />
         </Col>
       </Row>
+      </Output.Provider>
     </div>
   );
 }
