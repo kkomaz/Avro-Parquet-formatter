@@ -67,9 +67,14 @@ function UploadCard() {
     openNotificationWithIcon('success', 'Success!', 'Successfully compiled')
   }
 
+  const onReset = () => {
+    setFiles([])
+    output.removeText()
+  }
+
   return (
     <Card
-      title="Avro/Parquet Upload"
+      title="Avro | Parquet Upload"
       css={css`
         height: 100vh;
         position: relative;
@@ -124,9 +129,17 @@ function UploadCard() {
         <Button
           css={theme => css`
             background: ${theme.colors.shadow};
+
+            &:focus,
+            &:active,
+            &:hover {
+              background: ${theme.colors.shadow};
+              border: 1px solid ${theme.colors.white};
+            }
           `}
           size="large"
           shape="round"
+          onClick={onReset}
         >
           Reset
         </Button>

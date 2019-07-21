@@ -12,9 +12,10 @@ module.exports = {
      javascriptEnabled: true,
      modifyVars: {
        '@primary-color': '#1DA57A',
-       '@menu-bg': '#D8E6E7',
+       '@menu-bg': '#1DA57A',
        '@menu-dark-bg': '#1C1D21',
-       '@link-color': '#1d48a5'
+       '@link-color': '#1d48a5',
+       '@layout-header-background': '#1DA57A',
      },
    }),
   ),
