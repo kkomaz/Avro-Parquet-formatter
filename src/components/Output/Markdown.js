@@ -18,7 +18,7 @@ function Markdown(props) {
       <Card
         title="Output"
         css={css`
-          height: 100vh;
+          min-height: 100vh;
           position: relative;
         `}
         headStyle={{

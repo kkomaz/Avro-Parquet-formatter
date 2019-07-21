@@ -76,7 +76,7 @@ function UploadCard() {
     <Card
       title="Avro | Parquet Upload"
       css={css`
-        height: 100vh;
+        min-height: 100vh;
         position: relative;
       `}
       headStyle={{
