@@ -76,7 +76,7 @@ function UploadCard() {
       `}
       headStyle={{
         color: colors.white,
-        background: colors.primary
+        background: colors.darkness
       }}
     >
       <div
@@ -120,6 +120,15 @@ function UploadCard() {
           disabled={_.isEmpty(files)}
         >
           Compile
+        </Button>
+        <Button
+          css={theme => css`
+            background: ${theme.colors.shadow};
+          `}
+          size="large"
+          shape="round"
+        >
+          Reset
         </Button>
       </div>
     </Card>

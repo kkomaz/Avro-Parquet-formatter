@@ -23,7 +23,7 @@ function Markdown(props) {
         `}
         headStyle={{
           color: colors.white,
-          background: colors.primary
+          background: colors.darkness
         }}
       >
         {
